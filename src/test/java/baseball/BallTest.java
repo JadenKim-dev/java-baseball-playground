@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class BallTest {
 
@@ -70,5 +71,19 @@ public class BallTest {
 
         BallStatus result = input.compare(answer);
         assertThat(result.isNothing()).isTrue();
+    }
+
+    @Test
+    @DisplayName("잘못된 index로 Ball 생성시 IllegalArgumentException 발생")
+    void create_with_wrong_index() {
+        assertThatThrownBy(() -> new Ball(0, 1)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Ball(4, 1)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("잘못된 num으로 Ball 생성시 IllegalArgumentException 발생")
+    void create_with_wrong_num() {
+        assertThatThrownBy(() -> new Ball(1, 0)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Ball(1, 10)).isInstanceOf(IllegalArgumentException.class);
     }
 }
