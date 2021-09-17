@@ -31,4 +31,12 @@ public class Ball {
     private int getNum() {
         return this.num;
     }
+
+    public BallStatus compare(Balls balls) {
+        return balls.getBallList().stream()
+                .map(this::compare)
+                .filter(s -> !s.isNothing())
+                .findFirst()
+                .orElse(BallStatus.NOTHING);
+    }
 }

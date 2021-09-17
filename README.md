@@ -38,5 +38,7 @@ BallStatus(enum) : Strike/Ball/Nothing
 
 -Logic-
 [] 정답을 만드는 로직(랜덤한 1-9까지의 수 3개로 구성)
-[] 결과를 계산하는 로직(스트라이크, 볼의 개수를 계산) [Balls] TestResult calculate(Balls balls)
-    [] 두 개의 공을 비교하는 로직 [Ball] BallStatus compare(Ball ball)
+[] 결과를 계산하는 로직(스트라이크, 볼의 개수를 계산) [Balls] TestResult play(Balls balls)
+    
+    [ ] Input의 공 하나와 Output을 비교하는 로직 [Ball] BallStatus compare(Balls balls)
+        [x] 두 개의 공을 비교하는 로직 [Ball] BallStatus compare(Ball ball)
