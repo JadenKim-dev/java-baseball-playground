@@ -24,3 +24,19 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+--Domain--
+TestResult : 결과를 담는다(strike, ball의 개수)
+Balls : 정답/사용자 입력을 담는 3개짜리 컬렉션
+Ball : Balls에 담기는 각각의 공(숫자)
+BallStatus(enum) : Strike/Ball/Nothing
+
+--Todo List--
+-UI-
+[] 입력을 위한 UI
+[] 출력을 위한 UI
+
+-Logic-
+[] 정답을 만드는 로직(랜덤한 1-9까지의 수 3개로 구성)
+[] 결과를 계산하는 로직(스트라이크, 볼의 개수를 계산) [Balls] TestResult calculate(Balls balls)
+    [] 두 개의 공을 비교하는 로직 [Ball] BallStatus compare(Ball ball)
