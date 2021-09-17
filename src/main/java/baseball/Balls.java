@@ -15,4 +15,12 @@ public class Balls {
     public List<Ball> getBallList() {
         return ballList;
     }
+
+    public GameResult compare(Balls answers) {
+        GameResult result = new GameResult();
+        ballList.stream()
+                .map(b -> b.compare(answers))
+                .forEach(result::add);
+        return result;
+    }
 }
